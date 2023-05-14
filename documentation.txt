@@ -1,1 +1,20 @@
-sfbjddfgkraejkf'
+def dismiss_popupConfirm(self, *args):
+    self.popup.dismiss()
+    # add function to download here
+
+
+
+def promptUpload(self):
+    content = BoxLayout(orientation='vertical')
+    label = Label(text='Enter the youtube link for the video: ')
+    self.text_input = TextInput(multiline=False)
+    button_yes = Button(text='Confirm', size_hint_y=None, height=40, on_press=self.dismiss_popupConfirm)
+    button_no = Button(text='Cancel', size_hint_y=None, height=40, on_press=self.dismiss_popupCancel)
+    content.add_widget(label)
+    content.add_widget(self.text_input)
+    content.add_widget(button_yes)
+    content.add_widget(button_no)
+    self.popup = Popup(title='Upload to youtube', content=content, size_hint=(None, None), size=(400, 200))
+    self.popup.open(),  AttributeError: 'UploadScreen' object has no attribute 'text_input'
+
+how do i get the text_input in the dismiss_popupConfirm from the upload prompt in python kivy
